@@ -54,6 +54,9 @@ while True:
 
     decoded_set = [instruction_address, instruction, memory_address, data, instruction_continuer] #debug variable
     
+    #Executer
+    #Branch testing
+    
     
 
     
