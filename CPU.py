@@ -10,16 +10,7 @@ ram = [
 ["01010101", "00000001"],
 ]
 
-"""
-Instruction-Set:
-0000 = load
-0001 = add 
-0010 = store
-0011 = compare
-0100 = output
-"""
-
-# Programmable instructions
+# Programmable instructions (EXAMPLE)
 instruction_data = [
 # NOTE: first instruction_address must be "0001" else the cpu could start fetching the wrong instructor resulting in program-bugs 
 # (instruction_address) (instruction) (memory_address) (data) (instruction_continuer)
