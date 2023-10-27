@@ -1,12 +1,12 @@
 import time
 
-show_process = True # shows processing steps of the cpu
-clock_speed = 1 # 0 => max_speed (based on code speed)
+show_process: bool = True # shows processing steps of the cpu
+clock_speed: float = 1 # 0 => max_speed (based on code speed)
 
 # DRAM (left: address) (right: data)
 # The Storage can be predefined and is dynamically changeable. (When predefined => It's like starting at a CPU execution timestamp)
 # NOTE: numbers must be 8bit long.
-ram = [
+ram: list[list[str]] = [
 ["01010101", "00000001"],
 ]
 
@@ -26,14 +26,14 @@ def instruction_search(address):
         if instruction[0] == address:
             return index
 
-def binary_decoder(str):
+def binary_decoder(binary_str: str) -> list[int]:
     # convert binary string to bit-list
     # example: "0101"  =>  [0,1,0,1] 
-    if str is None:
+    if binary_str is None:
         return None
     else:
-        bin = [int(b) for b in str]
-        return bin
+        bit_list = [int(bit) for bit in binary_str]
+        return bit_list
 
 def ram_addressing(addr):
     # iterating through memory_words in RAM and return data (binary_decoded) from given address
@@ -53,7 +53,7 @@ def show_steps(txt):
     if show_process:
         print(txt)
 
-clock_count = 0 # clock start
+clock_count: int = 0 # clock start
 accumulator = None # prefix loaded-data register
 memory_address_register = None #prefix memory-address-register
 result_register = None #prefix result-register
