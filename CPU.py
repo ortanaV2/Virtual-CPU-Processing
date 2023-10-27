@@ -1,7 +1,7 @@
 import time
 
 show_process: bool = True # shows processing steps of the cpu
-clock_speed: float = 1 # 0 => max_speed (based on code speed)
+clock_speed: float = 0.2 # 0 => max_speed (based on cpu speed)
 
 # DRAM (left: address) (right: data)
 # The Storage can be predefined and is dynamically changeable. (When predefined => It's like starting at a CPU execution timestamp)
@@ -51,6 +51,7 @@ def ram_index(address):
 def show_steps(txt):
     global show_process
     if show_process:
+        time.sleep(clock_speed)
         print(txt)
 
 clock_count: int = 0 # clock start
@@ -62,8 +63,6 @@ state_register = None #prefix state-register
 # CPU-Clock-Loop
 while True:
     show_steps(f"[Clock_Count]: {clock_count}")
-    time.sleep(clock_speed)
-
 # Fetching (instruction iteration)
     if clock_count == 0:
         instruction_index = instruction_search("0001")
