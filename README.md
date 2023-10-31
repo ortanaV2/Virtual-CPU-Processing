@@ -38,8 +38,8 @@ _**Example**_: `["00101101", "10011010"]` --> `[memory_address, data]`
 * state_register > _(True/False) values_
 
 ## SETTINGS
-(Default) `show_process = True` >  _shows the process-steps in terminal_
+_(Default)_ `show_process = True` >  _shows the process-steps in terminal_
 
-(Default) `clock_speed = 1` >  _instruction step speed_
-### USAGE
-> Program your own CPU instructions in `instruction_data`.
+_(Default)_ `clock_speed = 1` >  _instruction step speed_
+## USAGE
+Program your own CPU instructions in `instruction_data`.
